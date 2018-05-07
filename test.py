@@ -8,9 +8,7 @@ cap = cv2.VideoCapture('./videos/k2.MP4')
 
 #use trained cars XML classifiers
 car_cascade = cv2.CascadeClassifier('./data/cascade1.xml')
-#bicycle_cascade = cv2.CascadeClassifier('./data/bicycle.xml')
-#bus_cascade = cv2.CascadeClassifier('./data/bus.xml')
-#motorbike_cascade = cv2.CascadeClassifier('./data/motorbike.xml')
+
 
 #read until video is completed
 while True:
@@ -22,9 +20,7 @@ while True:
 
     #detect cars in the video
     cars = car_cascade.detectMultiScale(gray, 1.1, 3)
-    #bicycle = bicycle_cascade.detectMultiScale(gray, 1.1, 3)
-    #bus = bus_cascade.detectMultiScale(gray, 1.1, 3)
-   # motorbike = motorbike_cascade.detectMultiScale(gray, 1.1, 3)
+    
     
 
 
@@ -32,14 +28,7 @@ while True:
     for (x,y,w,h) in cars:
         cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
 
-    #for (x,y,w,h) in bicycle:
-    #    cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
-      
-    #for (x,y,w,h) in bus:
-    #    cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
-      
-    #for (x,y,w,h) in motorbike:
-    #   cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
+    
       
       
 
